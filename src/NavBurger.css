@@ -1,0 +1,53 @@
+
+:root {
+    --container-radius: 20px;
+}
+
+.burger-container {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--container-radius) * 2);
+    height: calc(var(--container-radius) * 2);
+    border-radius: calc(var(--container-radius) * 1);
+    background-color: #8a2be2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.burger-patty {
+    margin-top: calc(var(--container-radius) * 0.1);
+    margin-bottom: calc(var(--container-radius) * 0.1);
+    width: calc(var(--container-radius) * 1.15);
+    height: calc(var(--container-radius) * 0.20);
+    background-color: aliceblue;
+    border-radius: calc(var(--container-radius) * 0.15);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.burger-container:hover .top-patty {
+    animation: top-patty-bounce 1s linear 0s infinite normal;
+}
+
+.burger-container:hover .middle-patty {
+    animation: middle-patty-bounce 1s linear 0s infinite normal;
+}
+
+@keyframes top-patty-bounce {
+    0% {transform: translate(0);}
+    25% {transform: rotate(14deg) translate(5%, -30%);}
+    50% {transform: translate(0);}
+    75% {transform: rotate(-14deg) translate(-5%, -30%);}
+    100% {transform: translate(0);}
+}
+
+@keyframes middle-patty-bounce {
+    0% {transform: translate(0);}
+    25% {transform: rotate(5deg) translate(0%, -20%);}
+    50% {transform: translate(0);}
+    75% {transform: rotate(-5deg) translate(-0%, -20%);}
+    100% {transform: translate(0);}
+}
